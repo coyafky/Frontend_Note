@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table {
+            width: 800px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        tbody tr {
+            height: 30px;
+        }
+
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 12px;
+        }
+
+        .bgc {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>啊</td>
+                <td>我</td>
+                <td>我</td>
+                <td>额</td>
+                <td>人</td>
+            </tr>
+            <tr>
+                <td>啊</td>
+                <td>我</td>
+                <td>我</td>
+                <td>额</td>
+                <td>人</td>
+            </tr>
+            <tr>
+                <td>啊</td>
+                <td>我</td>
+                <td>我</td>
+                <td>额</td>
+                <td>人</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 鼠标移动到哪一行，哪一行的背景颜色就变深
+        // 1. 获取元素
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        // 2. for循环注册事件
+        for(var i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function() {
+                // 鼠标移入，为其添加背景色的类
+                this.className = 'bgc';
+            }
+            trs[i].onmouseout = function() {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+</html>

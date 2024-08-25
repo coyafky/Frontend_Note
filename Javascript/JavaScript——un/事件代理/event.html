@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Delegation Example</title>
+</head>
+<body>
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <script>
+    // 使用事件代理绑定点击事件
+    var myList = document.getElementById('myList');
+    myList.addEventListener('click', function(event) {
+      if (event.target.tagName === 'LI') {
+        console.log('Clicked on:', event.target.textContent);
+      }
+    });
+  </script>
+</body>
+</html>

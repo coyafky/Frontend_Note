@@ -1,0 +1,29 @@
+.message, .warning, .error, .success {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.success {
+  border-color: green;
+  background-color: #eaffea;
+}
+
+.error {
+  border-color: red;
+  background-color: #fffcec;
+}
+
+.warning {
+  border-color: orange;
+  background-color: #fff9ea;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

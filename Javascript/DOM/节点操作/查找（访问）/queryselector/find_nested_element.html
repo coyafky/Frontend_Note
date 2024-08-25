@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+</head>
+<body>
+  <div id="parent">
+    <span class="child">First Child</span>
+    <span class="child">Second Child</span>
+  </div>
+
+  <script>
+    const firstChild = document.querySelector('#parent .child');
+    console.log(firstChild.textContent); // 输出: First Child
+  </script>
+</body>
+</html>

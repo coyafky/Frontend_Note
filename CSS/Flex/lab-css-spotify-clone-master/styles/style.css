@@ -1,0 +1,182 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* 头部样式 */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+}
+
+.Spotify_logo img {
+    height: 40px;
+}
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #5c5c5c;
+   
+}
+
+/* 主内容样式 */
+main {
+    position: relative;
+}
+
+main img {
+    width: 100%;
+    display: block;
+}
+/* 登陆页面样式 */
+.landing {
+    position: relative;
+    height: 100%; /* 使容器高度为视口高度 */
+    overflow: hidden;
+}
+
+.landing img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 使图片覆盖整个容器 */
+}
+
+.landing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 600px;
+}
+
+.landing-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.landing-subtitle {
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+/* 功能介绍部分 */
+.features {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.feature-title{
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+
+}
+.feature-container {
+   
+    display: flex;
+    flex-direction:row;
+    
+}
+
+.feature {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.feature-image {
+    position: relative;
+    height: 200px;
+
+    margin-bottom: 20px;
+}
+
+.feature-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+}
+.feature h3 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: aquamarine;
+}
+
+.feature p {
+    color: #666;
+}
+
+/* Kanye West 部分 */
+.kanye-west {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: #1bb36c;
+    color: #fff;
+}
+
+.kanye-west h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.kanye-west div {
+    flex: 1;
+}
+
+
+
+.kanye-west h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.kanye-west p {
+    margin-bottom: 20px;
+}
+.spotify-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spotify-icon img{
+    width: 100px;
+    height: 100px;
+}
+.spotify-app img{
+    width :300px;
+    height: 500px;
+}

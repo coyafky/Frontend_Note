@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 寻找 100 以内的质数
+
+    // 穷举法
+
+    outer:for (let i = 2; i <= 100; i++) {
+        // 内层循环开始从2开始除于 i 如果可以整除，说明他不是质数 就可以筛选下一个质数了
+
+        for(let j =2;j<=i;j++){
+            if(i%j===0){
+                // 说明他不是质数
+                // continue 复制是他最内层的选好
+                // 给for循环加入到label,再continue就爱如label 
+                continue outer;
+            }
+            console.log(i);
+            
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.then 返回的新 Promise 状态</title>
+</head>
+<body>
+    <h1>Promise.then 返回的新 Promise 状态</h1>
+    <script>
+        // 示例1: 返回一个非 Promise 值
+        let promise1 = new Promise((resolve, reject) => {
+            resolve('成功1');
+        }).then(result => {
+            return '新成功1';
+        });
+
+        promise1.then(result => {
+            console.log('示例1:', result); // 输出: 新成功1
+        });
+
+        // 示例2: 抛出错误
+        let promise2 = new Promise((resolve, reject) => {
+            resolve('成功2');
+        }).then(result => {
+            throw new Error('新错误2');
+        });
+
+        promise2.catch(error => {
+            console.log('示例2:', error.message); // 输出: 新错误2
+        });
+
+        // 示例3: 返回一个 Promise 对象
+        let promise3 = new Promise((resolve, reject) => {
+            resolve('成功3');
+        }).then(result => {
+            return new Promise((resolve, reject) => {
+                resolve('新成功3');
+            });
+        });
+
+        promise3.then(result => {
+            console.log('示例3:', result); // 输出: 新成功3
+        });
+
+        // 示例4: 返回一个被拒绝的 Promise 对象
+        let promise4 = new Promise((resolve, reject) => {
+            resolve('成功4');
+        }).then(result => {
+            return new Promise((resolve, reject) => {
+                reject('新错误4');
+            });
+        });
+
+        promise4.catch(error => {
+            console.log('示例4:', error); // 输出: 新错误4
+        });
+    </script>
+</body>
+</html>

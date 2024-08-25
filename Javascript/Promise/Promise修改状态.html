@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改Promise对象的状态</title>
+</head>
+<body>
+    <h1>修改Promise对象的状态</h1>
+    <script>
+        let promise = new Promise((resolve, reject) => {
+            // 修改状态为 fulfilled
+            resolve('Success');
+            
+            // 或者修改状态为 rejected
+            // reject(new Error('Failure'));
+        });
+
+        promise.then(result => {
+            console.log('Resolved:', result);
+        }).catch(error => {
+            console.error('Rejected:', error.message);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>熊大</li>
+        <li>熊二</li>
+        <li>光头强</li>
+        <li>吉吉国王</li>
+    </ul>
+    <button>删除</button>
+
+    <script>
+        // 1. 获取元素
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        // 2. node.removeChild(child)   删除子元素  node父元素  child子元素
+        // ul.removeChild(ul.children[0]);
+
+        // 3. 点击按钮删除子元素，删除完后按钮变灰
+        btn.onclick = function() {
+            if(ul.children.length == 0) {
+                btn.disabled = true;
+            }
+            else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+</html>

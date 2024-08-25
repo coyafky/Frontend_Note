@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr,th,td {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>成绩</th>
+                <th>科目</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // 1. 准备数据
+        var data = [
+            {
+                uname: '熊大',
+                score: 98,
+                subject: 'javascript'
+            },
+            {
+                uname: '熊二',
+                score: 98,
+                subject: 'javascript'
+            },
+            {
+                uname: '光头强',
+                score: 98,
+                subject: 'javascript'
+            },
+        ]
+        
+        var body = document.querySelector('tbody');
+        //  2. tbody添加行tr，行数是data数组的长度
+        for(var i = 0; i < data.length; i++) {
+            // 创建节点
+            var tr = document.createElement('tr');
+            // 添加节点
+            body.appendChild(tr);
+
+            // 3. 每一个tr添加td，遍历对象获取属性
+            for(var k in data[i]) {
+                var td = document.createElement('td');
+                td.innerHTML = data[i][k];
+                tr.appendChild(td);
+            }
+            // 4. 一个tr添加完td后，再添加一个删除操作
+            var td = document.createElement('td');
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+        }
+
+        // 5. 删除tr节点的功能
+        var del = document.querySelectorAll('a');
+        var tbody = document.querySelector('tbody');
+        for(var i = 0; i < del.length; i++) {
+            // a标签的父级是td，td的父级是tr，点击a后要删除当前a的tr
+            del[i].onclick = function() {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+        
+    </script>
+</body>
+</html>

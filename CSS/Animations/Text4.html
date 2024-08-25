@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #one {
+            animation-name: example;
+            animation-duration: 2s;
+            animation-iteration-count: 2;
+        }
+
+        #two {
+            animation-name: example;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            from {
+                background-color: orange;
+            }
+
+            to {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="one">This text changes its color two times.</h2>
+    <h2 id="two">This text changes its color infinite times.</h2>
+</body>
+</html>

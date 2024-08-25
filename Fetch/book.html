@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书管理系统</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        图书管理系统
+    </h1>
+    <form id="addBookForm">
+        <input type="text" id="title" placeholder="书名" required>
+        <input type="text" id="author" placeholder="作者" required>
+        <button type="submit">添加图书</button>
+    </form>
+    <table id="booksTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 图书列表将在这里动态生成 -->
+        </tbody>
+    </table>
+
+    <script>
+        const API_URL ='http://localhost:3000/books';
+        async function getBooks() {
+            try{
+                const response = await fetch(API_URL);
+                if(!response.ok){
+                    throw new  Error('Network response was not ok');
+                }
+                const books = await response.json();
+                displayBooks(books);
+            }catch(error){
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+          
+        }
+
+        // 显示图书列表
+
+        // 显示图书列表
+    function displayBooks(books) {
+      const tbody = document.querySelector('#booksTable tbody');
+      tbody.innerHTML = '';
+      books.forEach(book => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${book.id}</td>
+          <td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>
+            <button onclick="editBook(${book.id})">编辑</button>
+            <button onclick="deleteBook(${book.id})">删除</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // 添加图书
+    async function addBook(book) {
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(book)
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const newBook = await response.json();
+        getBooks();
+      } catch (error) {
+        console.error('Error adding book:', error);
+      }
+    }
+
+    // 更新图书
+    async function updateBook(id, book) {
+      try {
+        const response = await fetch(`${API_URL}/${id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(book)
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const updatedBook = await response.json();
+        getBooks();
+      } catch (error) {
+        console.error('Error updating book:', error);
+      }
+    }
+
+    // 删除图书
+    async function deleteBook(id) {
+      try {
+        const response = await fetch(`${API_URL}/${id}`, {
+          method: 'DELETE'
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        getBooks();
+      } catch (error) {
+        console.error('Error deleting book:', error);
+      }
+    }
+
+    // 编辑图书
+    function editBook(id) {
+      const title = prompt('请输入新的书名：');
+      const author = prompt('请输入新的作者：');
+      if (title && author) {
+        updateBook(id, { title, author });
+      }
+    }
+
+    // 表单提交处理
+    document.querySelector('#addBookForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const title = document.querySelector('#title').value;
+      const author = document.querySelector('#author').value;
+      await addBook({ title, author });
+      document.querySelector('#title').value = '';
+      document.querySelector('#author').value = '';
+    });
+
+    // 初始化加载图书列表
+    getBooks();
+    </script>
+</body>
+
+</html>

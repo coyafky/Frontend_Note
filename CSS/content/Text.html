@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Property Example</title>
+    <style>
+        /* 清除浮动的样式 */
+        .clearfix:after {
+            content: ".";       /* 这里利用到了content属性 */
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        
+
+        /* 示例样式 */
+        .container {
+            border: 1px solid #000;
+            padding: 10px;
+        }
+        .float-left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 5px;
+        }
+        .float-right {
+            float: right;
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            margin: 5px;
+        }
+
+        /* 使用content属性插入文本和图标 */
+        .text::before {
+            content: "前缀文本";
+            color: green;
+        }
+        .text::after {
+            content: "后缀文本";
+            color: blue;
+        }
+        .icon::before {
+            content: "\2665"; /* Unicode heart symbol */
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="float-left"></div>
+        <div class="float-right"></div>
+        <div class="float-left"></div>
+        <div class="float-right"></div>
+    </div>
+
+    <div class="text">这是一个示例文本。</div>
+    <div class="icon">这是一个示例图标。</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let div = document.createElement('div');
+    div.id='content';
+    div.innerHTML='<h1>Hello World</h1>';
+    div.className='content';
+    let text =document.createTextNode('Hello World');
+    div.appendChild(text);
+    let h2 = document.createElement('h2');
+    h2.textContent="Add h2 elemnet to the div";
+    div.appendChild(h2);
+    document.body.appendChild(div);
+    
+
+</script>
+</html>

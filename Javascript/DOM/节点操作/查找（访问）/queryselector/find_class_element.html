@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+</head>
+<body>
+  <div class="myClass">First Element with Class</div>
+  <div class="myClass">Second Element with Class</div>
+  <div>Element without Class</div>
+
+  <script>
+    const elementByClass = document.querySelector('.myClass');
+    console.log(elementByClass.textContent); // 输出: First Element with Class
+  </script>
+</body>
+</html>

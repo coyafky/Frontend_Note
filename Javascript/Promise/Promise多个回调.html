@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise 多个回调示例</title>
+</head>
+<body>
+    <h1>Promise 多个回调示例</h1>
+    <script>
+        // 创建一个Promise对象
+        let myPromise = new Promise((resolve, reject) => {
+            // 模拟异步操作
+            setTimeout(() => {
+                // 改变Promise状态为fulfilled（成功）
+                resolve('成功！');
+                
+                // 或者改变Promise状态为rejected（失败）
+                // reject('失败！');
+            }, 1000);
+        });
+
+        // 指定多个成功回调函数
+        myPromise.then(result => {
+            console.log('成功回调1:', result);
+        });
+
+        myPromise.then(result => {
+            console.log('成功回调2:', result);
+        });
+
+        // 指定多个失败回调函数
+        myPromise.catch(error => {
+            console.log('失败回调1:', error);
+        });
+
+        myPromise.catch(error => {
+            console.log('失败回调2:', error);
+        });
+    </script>
+</body>
+</html>

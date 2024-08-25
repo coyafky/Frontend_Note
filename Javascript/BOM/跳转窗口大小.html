@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+
+    <script>
+        // 等页面加载完再执行代码
+        window.addEventListener('load', function() {
+            var div = document.querySelector('div');
+            // resize事件当浏览器窗口发生变化就会触发
+            window.addEventListener('resize', function() {
+                // 如果窗口宽度 innerWidth 小于800px ，隐藏div盒子
+                if(window.innerWidth < 800) {
+                    div.style.display = 'none';
+                }
+                else {
+                    div.style.display = 'block';
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

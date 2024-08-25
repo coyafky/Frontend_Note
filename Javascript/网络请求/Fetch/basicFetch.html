@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch的基本用法</title>
+</head>
+
+<body>
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(
+                ((resonse) => {
+                    console.log("数据请求成功", resonse.json());
+                })
+            )
+            .catch(
+                ((error) => {
+                    console.log("数据请求失败", error);
+                })
+            )
+    </script>
+</body>
+
+</html>

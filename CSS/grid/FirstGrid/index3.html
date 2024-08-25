@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Template Areas</title>
+<style>
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "sidebar content content"
+      "footer footer footer";
+    grid-gap: 10px;
+    grid-template-rows: auto;
+    height: 100vh; /* 设置容器高度为视口高度 */
+  }
+  .header {
+    grid-area: header;
+    background-color: lightcoral;
+    padding: 20px;
+  }
+  .sidebar {
+    grid-area: sidebar;
+    background-color: lightgreen;
+    padding: 20px;
+  }
+  .content {
+    grid-area: content;
+    background-color: lightblue;
+    padding: 20px;
+  }
+  .footer {
+    grid-area: footer;
+    background-color: lightgray;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">Header</div>
+  <div class="sidebar">Sidebar</div>
+  <div class="content">Content</div>
+  <div class="footer">Footer</div>
+</div>
+
+</body>
+</html>

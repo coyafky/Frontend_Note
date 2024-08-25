@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>after() Example</title>
+</head>
+<body>
+  <div id="myElement">Hello, World!</div>
+
+  <script>
+    const myElement = document.getElementById('myElement');
+    const newElement1 = document.createElement('div');
+    newElement1.textContent = 'First new element.';
+
+    const newElement2 = document.createElement('div');
+    newElement2.textContent = 'Second new element.';
+
+    myElement.after(newElement1, newElement2);
+  </script>
+</body>
+</html>

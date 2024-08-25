@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .left {
+            width: 200px;
+            /* 固定宽度 */
+            background-color: lightblue;
+            height:100vh;
+        }
+
+        .right {
+            flex: 1;
+            /* 自适应宽度 */
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            Left
+        </div>
+        <div class="right">
+            Right
+        </div>
+    </div>
+</body>
+
+</html>

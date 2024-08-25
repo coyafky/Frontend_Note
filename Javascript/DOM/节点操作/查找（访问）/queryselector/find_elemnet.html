@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+</head>
+<body>
+  <input type="text" name="username">
+  <input type="password" name="password">
+
+  <script>
+    const inputElement = document.querySelector('input[type="text"]');
+    console.log(inputElement.name); // 输出: username
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方案2</title>
+    <style>
+        .container {
+            position: relative;
+            height: 100vh; /* 高度自适应 */
+        }
+        .fixed-height {
+            height: 100px;
+            background-color: lightblue;
+        }
+        .sub {
+            position: absolute;
+            top: 100px;
+            bottom: 0;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fixed-height">Fixed Height: 100px</div>
+        <div class="sub">Remaining Height</div>
+    </div>
+</body>
+</html>

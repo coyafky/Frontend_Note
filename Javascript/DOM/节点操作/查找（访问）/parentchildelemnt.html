@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+        <li class="first">
+            Home
+        </li>
+        <li>
+            products
+        </li>
+        <li class="current">
+            Customer Support
+        </li>
+        <li>
+            Carrers
+        </li>
+        <li>
+            Inventors
+        </li>
+        <li>
+            News
+        </li>
+        <li class="List">
+            About Us
+        </li>
+
+    </ul>
+    <script>
+        // 首先，使用 #menu 方法选择 getElementById() 元素。
+        let content =document.getElementById('menu');
+        let first = content.firstElementChild;
+        console.log(first);
+        // 其次，使用 firstElementChild 属性获取第一个子元素。
+
+        // 获取最后一个元素
+        console.log(content.lastElementChild);
+
+        // 获取所有子元素
+
+        let children = content.children;
+        console.log(children);
+
+    </script>
+</body>
+</html>

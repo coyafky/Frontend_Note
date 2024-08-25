@@ -1,0 +1,43 @@
+
+$footercolor:red;
+$headercolor:blue;
+$maincolor:green;
+$asidecolor:yellow;
+$articlecolor:purple;
+$navcolor:orange;
+
+
+footer {
+background-color: $footercolor;
+height: 80px;
+width: 100%;
+}
+
+header {
+background-color: $headercolor;
+height: 100px;
+width: 100%;
+}
+
+main {
+background-color: $maincolor;
+height: 500px;
+width: 100%;
+}
+
+main>aside {
+background-color: $asidecolor;
+width: 20%;
+height: 100%;
+}
+
+main> article {
+width: 80%;
+height: 100%;
+background-color: $articlecolor;
+float: left;
+}
+
+nav{
+background-color: $navcolor;
+}

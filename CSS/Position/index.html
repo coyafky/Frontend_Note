@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Positioning Example</title>
+<style>
+  .box {
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+  }
+  #box1 {
+    background-color: red;
+    position: relative;
+    top: 20px;
+    left: 30px;
+  }
+  #box2 {
+    background-color: green;
+    position: absolute;
+    top: 50px;
+    right: 0;
+  }
+  #box3 {
+    background-color: blue;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  #box4 {
+    background-color: purple;
+    position: sticky;
+    top: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="box" id="box1">Box 1</div>
+<div class="box" id="box2">Box 2</div>
+<div class="box" id="box3">Box 3</div>
+<div class="box" id="box4">Box 4</div>
+<p>Scroll down the page...</p>
+<p>...the 'Box 4' will stick to the top when you reach its scroll position.</p>
+<p>...the 'Box 3' will stay fixed at the bottom right corner of the viewport.</p>
+
+</body>
+</html>

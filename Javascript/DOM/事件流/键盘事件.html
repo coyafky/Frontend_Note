@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 常用键盘操作
+        // 1. keyup按键弹起的时候
+        // document.onkeyup = function() {}
+        document.addEventListener('keyup', function() {
+            console.log('我弹起了');
+        })
+        // 2. keydown 按键按下的时候
+        // document.onkeydown = function() {}
+        document.addEventListener('keydown', function() {
+            console.log('我按下了');
+        })
+        // 3. keypress 按键按下的时候
+        // document.onkeydown = function() {}
+        document.addEventListener('keypress', function() {
+            console.log('我press了');
+        })
+
+        // 4. 按一个按键的执行顺序是keydown keypress keyup
+
+        // 5. 根据keyCode判断用户按了哪个键，返回用户按键的ASCII码值
+        document.addEventListener('keyup', function(e) {
+            alert(e.keyCode);   // keyup 和 keydown不区分大小写
+        })
+        document.addEventListener('keypress', function(e) {
+            alert(e.keyCode);   // keypress区分大小写的ASCII码值，但是不识别功能键的ASCII码值
+        })
+
+    </script>
+</body>
+</html>

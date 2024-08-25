@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .panel {
+            margin: 100px 300px;
+        }
+
+        .nav {
+            float: left;
+            width: 100px;
+            text-align: center;
+        }
+
+        .nav a {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav ul {
+            display: none;
+        }
+
+        .nav ul li {
+            border: 1px solid skyblue;
+            border-top: none;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <li class="nav">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="nav">
+            <a href="#">微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </div>
+
+    <script>
+        var panel = document.querySelector('.panel');
+        var lis = panel.children;
+        console.log(lis);
+        console.log(lis[0].children[1]);
+        for(var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function() {
+                this.children[0].style.backgroundColor = 'skyblue';
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function() {
+                this.children[0].style.backgroundColor = '';
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

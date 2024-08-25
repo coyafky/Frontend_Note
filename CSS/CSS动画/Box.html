@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            transition: background-color 0.5s;
+        }
+
+        .box:hover {
+            background-color: yellow;
+        }
+
+        .box:nth-child(1):hover {
+            animation: move1 1s ease infinite;
+        }
+
+        .box:nth-child(2):hover {
+            animation: move2 1s ease-in infinite;
+        }
+
+        .box:nth-child(3):hover {
+            animation: move3 1s ease-out infinite;
+        }
+
+        .box:nth-child(4):hover {
+            animation: move4 1s ease-in-out infinite;
+        }
+
+        .box:nth-child(5):hover {
+            animation: move5 1s linear infinite;
+        }
+
+        .box:nth-child(6):hover {
+            animation: move6 1s step-start infinite;
+        }
+
+        .box:nth-child(7):hover {
+            animation: move7 1s step-end infinite;
+        }
+
+        @keyframes move1 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        @keyframes move2 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        @keyframes move3 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        @keyframes move4 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        @keyframes move5 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        @keyframes move6 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        @keyframes move7 {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(120px); }
+        }
+
+        .box:nth-child(1) { background-color: #0000ff; }
+        .box:nth-child(2) { background-color: #1a00e6; }
+        .box:nth-child(3) { background-color: #3300cc; }
+        .box:nth-child(4) { background-color: #4d00b3; }
+        .box:nth-child(5) { background-color: #660099; }
+        .box:nth-child(6) { background-color: #800080; }
+        .box:nth-child(7) { background-color: #990066; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+    </div>
+</body>
+
+</html>

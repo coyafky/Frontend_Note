@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // window.onload等文档页面加载完毕以后再执行代码
+        // 这样JS就不用写在html的下面了
+
+        // window.onload = function() {
+            // var btn = document.querySelector('button');
+            // btn.addEventListener('click',function() {
+            //     alert('点击我');
+            // })
+        // }
+
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click',function() {
+                alert('点击我');
+            })
+        })
+
+        // load需要等待页面加载完毕才能执行JS交互（包含图片、CSS等），如果页面有很多图片要加载体验就很差
+        // DOMContentLoaded在DOM元素加载完毕后就可以执行JS交互，可能内容没有加载完成，但是可以提前交互体验好一点
+        window.addEventListener('DOMContentLoaded', function() {
+            alert('最先出现');
+        })
+
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+</body>
+</html>

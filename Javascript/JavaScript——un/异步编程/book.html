@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PubSub Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+    }
+    .output {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 200px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PubSub Example</h1>
+    <div>
+      <button id="subscribeBtn">Subscribe to Event1</button>
+      <button id="publishBtn">Publish Event1</button>
+      <button id="unsubscribeBtn">Unsubscribe from Event1</button>
+    </div>
+    <div>
+      <input type="text" id="eventData" placeholder="Enter event data">
+    </div>
+    <div class="output" id="output"></div>
+  </div>
+
+  <script>
+    class PubSub {
+      constructor() {
+        this.handlers = {};
+      }
+      on(eventType, handler) {
+        if (!(eventType in this.handlers)) this.handlers[eventType] = [];
+        this.handlers[eventType].push(handler);
+      }
+      emit(eventType, ...handlerArgs) {
+        if (this.handlers[eventType]) {
+          this.handlers[eventType].forEach((v) => {
+            v(...handlerArgs);
+          });
+        }
+      }
+      remove(eventType, handler) {
+        if (!handler) {
+          this.handlers[eventType].length = 0;
+        } else {
+          const key = this.handlers[eventType].findIndex((v) => v === handler);
+          if (key !== -1) this.handlers[eventType].splice(key, 1);
+        }
+      }
+    }
+
+    const pubsub = new PubSub();
+    const output = document.getElementById('output');
+    const eventDataInput = document.getElementById('eventData');
+
+    const fn1 = (...data) => {
+      output.innerHTML += `<p>fn1: ${data.join(', ')}</p>`;
+    };
+
+    const fn2 = (...data) => {
+      output.innerHTML += `<p>fn2: ${data.join(', ')}</p>`;
+    };
+
+    document.getElementById('subscribeBtn').addEventListener('click', () => {
+      pubsub.on('event1', fn1);
+      pubsub.on('event1', fn2);
+      output.innerHTML += '<p>Subscribed to Event1</p>';
+    });
+
+    document.getElementById('publishBtn').addEventListener('click', () => {
+      const data = eventDataInput.value.split(',');
+      pubsub.emit('event1', ...data);
+    });
+
+    document.getElementById('unsubscribeBtn').addEventListener('click', () => {
+      pubsub.remove('event1', fn1);
+      output.innerHTML += '<p>Unsubscribed fn1 from Event1</p>';
+    });
+  </script>
+</body>
+</html>

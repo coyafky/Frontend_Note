@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        This is a Javascript before
+    </p>
+
+    <ul>
+        <li>Augular</li>
+        <li>Vue</li>
+    </ul>
+
+    <script>
+        // 插入单个节点
+        // const p = document.querySelector('p');
+
+        // const h1 =document.createElement('h1');
+        // h1.innerText ='JavascriptDOM-before'
+        // p.before(h1);
+
+        // 插入多个节点
+        const list = document.querySelector('ul');
+        const libs =['React', 'Meteor', 'Polymer']
+        const items = libs.map((lib)=>{
+            const item = document.createElement('li');
+            item.innerText = lib;
+            return item;
+        });
+        list.firstChild.before(...items)
+    </script>
+
+    <!-- 使用JavaScript before()插入字符串 -->
+
+    
+</body>
+</html>

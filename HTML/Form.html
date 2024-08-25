@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册页面.2</title>
+</head>
+<body>
+    <form action="">
+    <h1>用户注册</h1>
+    <p>用户名称:<input type="text" name="usename" value="zhangsan" ></p>
+    <input type="text" name="usename" value="zhangsan" disabled>
+    <p>用户密码  :<input type="password" name="password" required>
+    </p>
+    <p>用户性别:
+        <input type="radio" name="sex" value="男" 
+        name="gender" checked>男
+        <input type="radio" name="gender" value="女">女
+    </p>
+    <p>爱好:
+        <input type="checkbox" name="like">足球
+        <input type="checkbox" name="like">篮球
+        <input type="checkbox" name="like">LOL
+        <input type="checkbox" name="like">韩剧
+        <input type="checkbox" name="like">王者荣耀
+      </p>
+    <p>邮箱：
+        <input type="email" name="email"
+        value="请输入您的邮箱"></p>
+      <p>用户头像：
+        <input type="file">
+      </p>
+      <p>您的家庭住址是：
+        <select name="province" id="province" >
+            <option value="shaanxi"selected>陕西</option>
+            <option value="shanx">山西</option>
+            <option value="CQ">重庆</option>
+            <option value="guizhou">贵州</option>
+        </select>
+      </p>
+    <p>您的建议或者意见
+        <textarea name="intro" id="intro" cols="25" rows="5">您的建议或者意见
+        </textarea>
+    </p>
+    <p>
+        <input type="color"><input type="date"><input type="time">
+        <input type="range"><input type="submit" value="注册用户">
+    </p>
+            <input type="元素类型" name="名称" value="元素值">
+</form>
+</body>
+</html>

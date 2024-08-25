@@ -1,0 +1,11 @@
+body {
+  background-color: white;
+  color: black;
+}
+@media (max-width: 600px) {
+  body {
+   background-image: url("https://pbs.twimg.com/media/GTgT1zJakAEgkOa?format=jpg&name=360x360");
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

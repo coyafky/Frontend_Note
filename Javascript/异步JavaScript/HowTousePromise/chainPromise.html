@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="output">
+
+    </div>
+
+    <script>
+        // const fetchPromise = fetch(
+        //     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+        // );
+
+        // fetchPromise.then((response) => {
+        //     const jsonPromise = response.json();
+        //     jsonPromise.then((json) => {
+        //         console.log(json[0].name);
+        //     });
+        // });
+
+        const fetchPromise = fetch(
+            "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
+        );
+
+        fetchPromise
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data[0].name);
+            });
+
+        console.log("已发送请求");
+        const content = document.querySelector("#output");
+        content.textContent = `Promise：${fetchPromise.toString()}`
+        // 当然如此。但 Promise 的优雅之处在于 then() 本身也会返回一个 Promise，这个 Promise 将指示 then() 中调用的异步函数的完成状态。这意味着我们可以（当然也应该）把
+
+
+    </script>
+</body>
+
+</html>

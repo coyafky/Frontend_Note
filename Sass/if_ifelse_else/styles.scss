@@ -1,0 +1,29 @@
+// 定义一个混合指令来设置文本样式
+@mixin text-style($color) {
+    color: $color;
+    @if lightness($color) > 50% {
+        background-color: #000;
+    } @else {
+        background-color: #fff;
+    }
+}
+
+// 使用混合指令来样式化文本
+.text-light {
+    @include text-style(#fefefe);
+}
+
+.text-dark {
+    @include text-style(#333);
+}
+
+.text-custom {
+    @include text-style(#8a2be2);
+}
+
+// 容器样式
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid grey;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: none;
+            outline: none;
+        }
+
+        .box label {
+            position: absolute;
+            top: -2px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for=""><img src="./images/closed.png" alt=""></label>
+        <input type="password" placeholder="请输入密码">
+    </div>
+
+    <script>
+        // 思路就是点击图片，password切换为text，再点击再切换
+        var pwd = document.querySelector('input');
+        var eye = document.querySelector('img');
+        var lab = document.querySelector('label');
+        var flag = 0;
+        lab.onclick = function() {
+            if(flag == 0) {
+                eye.src = './images/open.png';
+                pwd.type = "text";
+                flag = 1;
+            }
+            else {
+                eye.src = './images/closed.png';
+                pwd.type = "password";
+                flag = 0;
+            }
+        }
+    </script>
+</body>
+</html>

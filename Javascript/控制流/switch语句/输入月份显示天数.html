@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let month = Number(prompt("请输入月份"));
+
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+
+                alert(31);
+                break;
+
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert(30);
+                break;
+
+            case 2:
+                // 计算一下根据用户输入的year来计算当年是否是闰年
+                let year = new Date ().getFullYear();
+                console.log(year);
+                
+                if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                    alert(29);
+                    break;
+                }
+                alert(28);
+                break;
+
+               
+            default:
+                alert("输入正确的月份");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertBefore Example</title>
+</head>
+<body>
+    <!-- insertBefore 方法用于在指定节点的父节点中，将新节点插入到指定节点之前。 -->
+    <div id="parent">
+        <div id="child1">Child 1</div>
+        <div id="child2">Child 2</div>
+    </div>
+
+    <script>
+        // 获取父节点和参考节点
+        const parent = document.getElementById('parent');
+        const child1 = document.getElementById('child1');
+
+        // 创建新节点
+        const newNode = document.createElement('div');
+        newNode.textContent = 'New Node';
+
+        // 在 child1 之前插入新节点
+        parent.insertBefore(newNode, child1);
+    </script>
+</body>
+</html>

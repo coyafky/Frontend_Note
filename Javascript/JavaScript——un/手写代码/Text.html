@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex to RGB Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hex to RGB Converter</h1>
+    <input type="text" id="hexColor" placeholder="Enter hex color (e.g., #FF0000)">
+    <button onclick="convertToRGB()">Convert</button>
+    <div id="result"></div>
+
+    <script>
+        function toRGB(color) {
+            var regex = /^#([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/; // 匹配十六进制的正则
+            match = color.match(regex);  // 判断是否是十六进制颜色值
+            return match ? 'rgb(' + parseInt(match[1], 16) + ',' + parseInt(match[2], 16) + ',' + parseInt(match[3], 16) + ')' : color;
+        }
+
+        function convertToRGB() {
+            var hexColor = document.getElementById('hexColor').value;
+            var rgbColor = toRGB(hexColor);
+            document.getElementById('result').innerText = rgbColor;
+        }
+    </script>
+</body>
+</html>

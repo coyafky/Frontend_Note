@@ -1,0 +1,31 @@
+.message{
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.success{
+    @extend .message;
+    border-color: green;
+    background-color: #eaffea;
+}
+
+.error{
+    @extend .message;
+    border-color: red;
+    background-color: #fffcec;
+}
+
+.warning{
+    @extend .message;
+    border-color: orange;
+    background-color: #fff9ea;
+}
+
+// 容器样式
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }

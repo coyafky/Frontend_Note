@@ -1,0 +1,36 @@
+footer {
+  background-color: red;
+  height: 80px;
+  width: 100%;
+}
+
+header {
+  background-color: blue;
+  height: 100px;
+  width: 100%;
+}
+
+main {
+  background-color: green;
+  height: 500px;
+  width: 100%;
+}
+
+main > aside {
+  background-color: yellow;
+  width: 20%;
+  height: 100%;
+}
+
+main > article {
+  width: 80%;
+  height: 100%;
+  background-color: purple;
+  float: left;
+}
+
+nav {
+  background-color: orange;
+}
+
+/*# sourceMappingURL=ouput.css.map */

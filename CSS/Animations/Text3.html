@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #one {
+            animation-name: example;
+            animation-duration: 10s;
+        }
+
+        #two {
+            animation-name: example;
+            animation-duration: 10s;
+            animation-delay: 10s;
+        }
+
+        @keyframes example {
+            from {
+                background-color: orange;
+            }
+
+            to {
+                background-color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="one">Text animation without delayed.</h2>
+    <h2 id="two">Text animation with 10 second delay.</h2>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h2 {
+            width: 100%;
+            animation-name: text;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        #one {
+            animation-direction: normal;
+        }
+
+        #two {
+            animation-direction: reverse;
+        }
+
+        #three {
+            animation-direction: alternate;
+        }
+
+        #four {
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes text {
+            from {
+                margin-left: 60%;
+            }
+
+            to {
+                margin-left: 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="one">This text is normal.</h2>
+    <h2 id="two">This text is reverse.</h2>
+    <h2 id="three">This text is alternate.</h2>
+    <h2 id="four">This text is alternate-reverse.</h2>
+</body>
+</html>

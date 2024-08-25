@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timers Example</title>
+  <style>
+    #output {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <button id="setTimeoutBtn">Start setTimeout</button>
+  <button id="setIntervalBtn">Start setInterval</button>
+  <button id="requestAnimationFrameBtn">Start requestAnimationFrame</button>
+  <div id="output1"></div>
+  <div id="output2"></div>
+  <div id="output3"></div>
+
+  <script>
+    const output = document.getElementById('output');
+
+    document.getElementById('setTimeoutBtn').addEventListener('click', () => {
+      let count = 0;
+      function recursiveTimeout() {
+        setTimeout(() => {
+          count++;
+          output1.textContent = `setTimeout: ${count}`;
+          recursiveTimeout();
+        }, 1000);
+      }
+      recursiveTimeout();
+    });
+
+    document.getElementById('setIntervalBtn').addEventListener('click', () => {
+      let count = 0;
+      const intervalId = setInterval(() => {
+        count++;
+        output2.textContent = `setInterval: ${count}`;
+      }, 1000);
+
+      // Optionally, you can stop the interval after a certain number of executions
+      setTimeout(() => {
+        clearInterval(intervalId);
+        output2.textContent += ' (Interval stopped)';
+      }, 10000);
+    });
+
+    document.getElementById('requestAnimationFrameBtn').addEventListener('click', () => {
+      let startTime = null;
+      let count = 0;
+
+      function animate(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+
+        if (elapsed > 1000) {
+          count++;
+          output3.textContent = `requestAnimationFrame: ${count}`;
+          startTime = timestamp;
+        }
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "title": "Updated Post",
+      "body": "This is an updated post",
+      "id": "3"
+    },
+    {
+      "id": "96af",
+      "title": "New Post",
+      "body": "This is a new post"
+    },
+    {
+      "id": "fa7e",
+      "title": "New Post",
+      "body": "This is a new post"
+    },
+    {
+      "id": "1c7a",
+      "title": "New Post",
+      "body": "This is a new post"
+    },
+    {
+      "id": "5001",
+      "title": "New Post",
+      "body": "This is a new post"
+    },
+    {
+      "id": "cff8",
+      "title": "New Post",
+      "body": "This is a new post"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "coya"
+  }
+}

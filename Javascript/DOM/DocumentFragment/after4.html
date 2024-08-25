@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>after() Example</title>
+</head>
+<body>
+  <div id="myElement">Hello, World!</div>
+
+  <script>
+    const myElement = document.getElementById('myElement');
+    const newText = document.createTextNode(' This is new text.');
+
+    myElement.after(newText);
+  </script>
+</body>
+</html>

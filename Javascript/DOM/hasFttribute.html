@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hasAttribute Example</title>
+</head>
+<body>
+    <div id="myElement" class="oldClass">Hello, World!</div>
+
+    <script>
+        // 获取要检查属性的元素
+        var element = document.getElementById("myElement");
+
+        // 使用 hasAttribute() 方法检查属性
+        if (element.hasAttribute("class")) {
+            console.log("该元素具有 class 属性");
+        } else {
+            console.log("该元素不具有 class 属性");
+        }
+    </script>
+</body>
+</html>

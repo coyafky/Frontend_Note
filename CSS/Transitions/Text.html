@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>页面示例</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .header {
+        background-color: red;
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .form-item {
+        margin: 20px;
+    }
+    .form-item label {
+        margin-right: 10px;
+    }
+    .form-item input[type="checkbox"] {
+        /* 这里可以添加自定义的开关样式 */
+    }
+    .form-item .required-dot {
+        color: red;
+    }
+    .date-picker {
+        display: block;
+        margin: 20px;
+    }
+    .action-button {
+        background-color: orange;
+        padding: 20px;
+        border: none;
+        color: white;
+        text-align: center;
+        display: block;
+        margin: 20px auto;
+        cursor: pointer;
+    }
+    .nav-bar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f2f2f2;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-item {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <!-- 头部内容 -->
+    <h1>一年好运跟你走</h1>
+</div>
+<div class="back-button">
+    <!-- 返回按钮 -->
+    <a href="#">&#8592; 返回</a>
+</div>
+<div class="form-item">
+    <!-- 开关组件 -->
+    <label>开关<label>
+    <input type="checkbox">
+</div>
+<div class="form-item">
+    <!-- 必填项 -->
+    <label><span class="required-dot">&#9679;</span> 必填项<label>
+    <input type="text" required>
+</div>
+<div class="form-item">
+    <!-- 日期选择器 -->
+    <label for="date-picker">日期<label>
+    <input id="date-picker" type="date">
+</div>
+<div class="action-button">
+    <!-- 动作按钮 -->
+    点击操作
+</div>
+<div class="nav-bar">
+    <!-- 底部导航栏 -->
+    <div class="nav-item">首页</div>
+    <div class="nav-item">任务</div>
+    <div class="nav-item">消息</div>
+    <div class="nav-item">我的</div>
+</div>
+</body>
+</html>

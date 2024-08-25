@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XMLHttpRequest新版本</title>
+</head>
+<body>
+  <script>
+    // 新建一个 XMLHttpRequest 对象
+    let xhr;
+    if (window.XMLHttpRequest) { // Mozilla, Safari...
+      xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE
+      try {
+          xhr = new ActiveXObject('Msxml2.XMLHTTP');
+      } catch (e) {
+        try {
+              xhr = new ActiveXObject('Microsoft.XMLHTTP'); //IE5,6
+        } catch (e) {}
+      }
+    }
+
+    // 请求成功回调函数
+    xhr.onload = () => {
+        console.log('请求成功', xhr.response);
+    };
+    // // 请求结束
+    // xhr.onloadend = () => {
+    //     console.log('请求失败', xhr.response);
+    // };
+    // // 请求出错
+    // xhr.onerror = e => {
+    //     console.log('请求出错', e);
+    // };
+    // // 请求超时
+    // xhr.ontimeout = e => {
+    //     console.log('请求超时', e);
+    // };
+
+    // 请求取消触发
+    // xhr.onabort = (e) => {
+    //   console.log('请求被取消了', e);
+    // }
+        
+    // 设置超时时间，0 表示永不超时
+    xhr.timeout = 0;
+
+    // 初始化请求
+    xhr.open("GET", "https://www.fastmock.site/mock/d867c364f89208a7672e9e9d0a822417/qixiao/getFileDetail", true);
+
+    // 设置期望的返回数据类型 'json' 'text' 'document' ...
+    xhr.responseType = 'json';
+
+    // 设置请求头
+    // xhr.setRequestHeader('', '');
+
+    // 发送请求
+    xhr.send({ name: "shuliqi", age: 18 });
+
+    // 取消请求
+    // xhr.abort();
+  </script>
+</body>
+</html>

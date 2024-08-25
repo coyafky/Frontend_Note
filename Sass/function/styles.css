@@ -1,0 +1,19 @@
+#sidebar {
+  width: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.box {
+  font-size: 24px;
+  background-color: #e0e0e0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */

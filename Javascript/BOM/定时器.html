@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. setTimeout()定时器
+        // window.setTimeout(函数, [延迟时间单位毫秒])
+        // (1) window可以省略
+        // (2) 延时时间单位毫秒，默认是0
+        // (3) 可能又多个定时器，一般给定时器赋一个标识符
+        function bomb1() {
+            console.log('爆炸了');
+        }
+
+        function bomb2() {
+            console.log('又爆炸了');
+        }
+
+        // 赋一个标识符给定时器
+        var time1 = setTimeout(bomb1, 2000);
+        var time2 = setTimeout(bomb2, 4000);
+
+        // 停止定时器 window.clearTimeout(timeID)
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                clearTimeout(time2);
+            })
+        })
+
+        // 2. setInerval()定时器
+        // 和serTimeout注意点基本相同，不同点在于它是每间隔一段时间就执行一次，重复执行
+        function sayhi() {
+            console.log('hello');
+        }
+        var hello = setInterval(sayhi, 1000);
+        //  停止定时器
+        window.addEventListener('load', function() {
+            var btn = document.querySelector('button');
+            btn.addEventListener('click', function() {
+                clearInterval(hello);
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>停止定时器</button>
+</body>
+</html>

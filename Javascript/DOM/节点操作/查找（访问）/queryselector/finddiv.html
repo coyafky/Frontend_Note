@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+</head>
+<body>
+  <div id="firstDiv">First Div</div>
+  <div class="myClass">Second Div</div>
+  <div class="myClass">Third Div</div>
+
+  <script>
+    const firstDiv = document.querySelector('div');
+    console.log(firstDiv.textContent); // 输出: First Div
+  </script>
+</body>
+</html>

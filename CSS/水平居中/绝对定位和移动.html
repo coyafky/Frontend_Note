@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Positioning Centering</title>
+    <style>
+        .parent {
+            position: relative;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .element {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: lightcoral;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="element">
+            This is a centered element using absolute positioning.
+        </div>
+    </div>
+</body>
+</html>

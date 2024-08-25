@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h2 {
+            width: 400px;
+            background-color: orange;
+            animation-name: text;
+            animation-duration: 3s;
+        }
+
+        #one {
+            animation-fill-mode: none;
+        }
+
+        #two {
+            animation-fill-mode: forwards;
+        }
+
+        #three {
+            animation-fill-mode: backwards;
+            animation-delay: 2s;
+        }
+
+        #four {
+            animation-fill-mode: both;
+            animation-delay: 2s;
+        }
+
+        @keyframes text {
+            from {
+                margin-left: 0%;
+                background-color: #aaaaaa;
+            }
+
+            to {
+                margin-left: 60%;
+                background-color: #008000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="one">none</h2>
+    <h2 id="two">forwards</h2>
+    <h2 id="three">backwards</h2>
+    <h2 id="four">both</h2>
+</body>
+</html>

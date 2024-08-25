@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 其他值，转换为数字
+
+        console.log(Number(true)); //1
+        console.log(Number(false));//0
+        console.log(Number(null));// 0
+        console.log(Number(undefined));// NaN
+        
+        console.log(Number('123'));
+        console.log(Number('123a')); //NaN
+        console.log(Number('123.45')); // 123.45
+        console.log(Number('2e4')); //20000
+        console.log('分割线');
+        
+        // parseInt
+        // parseInt的功能是把字符串转换为整数
+        // parseInt()方法将自动截掉第一个非数字字符之后的所有字符
+        console.log(parseInt('123')); //123
+        console.log(parseInt('123.45')); // 123
+        console.log(parseInt('圆周率是3.14')); //NaN 字符串不是数字开头，则转为NaN
+        console.log(parseInt('3.14是圆周率')); //3  所有文字都截掉
+        
+        console.log(parseInt('3.99')); //3 parseInt函数不四舍五入
+        console.log(parseInt('3e4')); //3 
+        
+        console.log('分割线');
+        
+        // String
+        // 数字-字符串 变为长的相同的字符串，科学计数法和非10进制的数字会转化为10进制数字的值
+        console.log(String(123)); //123
+        console.log(String(3.14)); //3.14
+        console.log(String(2e3)); //2000
+        console.log(String (true)); // true
+        console.log(String(NaN)); //NaN
+        console.log(String(0xf)); //15
+        
+        console.log('分割线');
+        
+        // toString() 方法
+        // 几乎所有的值都有toString 方法 ，功能是将值转为字符串
+        
+        // console.log(123.toString());
+        
+        // //An identifier or keyword cannot immediately follow a numeric literal.
+        console.log((123).toString());
+        let b  =6 ;
+        console.log(b.toString());
+        console.log((3.14).toString());
+        console.log((2e3).toString());
+        console.log((true).toString());
+        console.log((NaN).toString());
+        console.log((0xf).toString());
+        
+        console.log(true.toString());
+        console.log(NaN.toString());
+        
+        console.log((1 / 0).toString());
+        
+        
+        // 分割线
+
+        // 其他值 转换为boolean值
+
+        console.log(Boolean(123)); //true
+        console.log(Boolean(0)); //false
+        console.log(Boolean('')); //false
+        console.log(Boolean('0')); //true
+        console.log(Boolean('false')); //true
+        console.log(Boolean(null)); //false
+        console.log(Boolean(undefined)); //false
+        console.log(Infinity);
+        console.log(-Infinity);
+        console.log(NaN);
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <h1>Axios GET Request Example</h1>
+    <button onclick="fetchData()">Fetch Data</button>
+    <div id="response"></div>
+
+    <script>
+        function fetchData() {
+            axios.get('https://jsonplaceholder.typicode.com/posts/1')
+                .then(function (response) {
+                    // handle success
+                    document.getElementById('response').innerHTML = JSON.stringify(response.data, null, 2);
+                })
+                .catch(function (error) {
+                    // handle error
+                    document.getElementById('response').innerHTML = 'Error: ' + error.message;
+                });
+        }
+    </script>
+</body>
+</html>

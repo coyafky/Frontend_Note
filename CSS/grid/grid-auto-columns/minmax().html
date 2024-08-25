@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        CSS grid-auto-column Property
+    </title>
+    <style>
+        .main {
+            display: grid;
+            grid-template-areas: "a a";
+            grid-gap: 20px;
+            padding: 30px;
+            background-color: green;
+            grid-auto-columns: minmax(100px, 4cm);
+
+        }
+
+        .GFG {
+            text-align: center;
+            font-size: 35px;
+            background-color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="GFG">1</div>
+        <div class="GFG">2</div>
+        <div class="GFG">3</div>
+        <div class="GFG">4</div>
+        <div class="GFG">5</div>
+    </div>
+</body>
+</html>

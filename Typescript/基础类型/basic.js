@@ -1,0 +1,24 @@
+var name1 = "coya";
+console.log(name1);
+var age = 18;
+console.log(age);
+var isdone = true;
+console.log(isdone);
+var list = [1, 2, 3];
+console.log(list);
+var list2 = [1, 2, 3];
+console.log(list2);
+var x = ["hello", 10];
+console.log(x);
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+var c = Color.Blue;
+console.log(c);
+var notSure = 4;
+notSure = "maybe a string instead";
+notSure = false;
+console.log(notSure);

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise 执行时序</title>
+</head>
+<body>
+    <h1>Promise 执行时序</h1>
+    <script>
+        console.log('Sync code 1');
+
+        Promise.resolve().then(() => {
+            console.log('Microtask 1');
+        });
+
+        console.log('Sync code 2');
+
+        Promise.resolve().then(() => {
+            console.log('Microtask 2');
+        });
+    </script>
+</body>
+</html>

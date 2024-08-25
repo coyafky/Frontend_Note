@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avoiding Reflow and Repaint</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: transform 0.3s ease;
+        }
+        .box:hover {
+            transform: scale(1.1);
+        }
+        .new-style {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box"></div>
+
+    <button id="changeStyleButton">Change Style</button>
+
+    <script>
+        const box = document.getElementById('box');
+        const changeStyleButton = document.getElementById('changeStyleButton');
+
+        changeStyleButton.addEventListener('click', () => {
+            // 批量修改样式
+            box.classList.add('new-style');
+        });
+    </script>
+</body>
+</html>

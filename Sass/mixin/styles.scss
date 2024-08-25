@@ -1,0 +1,43 @@
+@mixin border-radius($radius:5px){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+// 定义一个混合指令来设置阴影
+@mixin box-shadow($x, $y, $blur, $color) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+  }
+
+  // 定义一个混合指令来设置悬停效果
+@mixin hover-effect {
+    &:hover {
+      @content;
+    }
+  }
+// 使用混合指令来样式化按钮
+.button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    @include border-radius(5px);
+    @include box-shadow(2px, 2px, 5px, #000);
+  
+    @include hover-effect {
+      background-color: darkblue;
+    }
+  }
+
+
+// 使用混合指令来样式化盒子
+.box {
+    background-color: lightgray;
+    padding: 20px;
+    @include border-radius(10px);
+    @include box-shadow(4px, 4px, 10px, #888);
+  }

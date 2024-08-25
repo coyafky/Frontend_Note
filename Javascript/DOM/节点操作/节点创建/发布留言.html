@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .panel {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        li a {
+            float: right;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="panel"> 
+        <textarea name="" id="one" cols="30" rows="10"></textarea>
+        <button>发布</button>
+        <ul></ul>
+    </div>
+
+    <script>
+        var text = document.getElementById('one');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+
+        btn.onclick = function() {
+            console.log(text);
+            
+            if (text.value == '') {
+                alert('您没有输入');
+                return false;
+            }
+            else {
+                // 创建节点
+                var li = document.createElement('li');
+                li.style.backgroundColor = 'pink';
+                // 获取输入内容     href='javascript:;'可以阻止a标签跳转
+                li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                // 添加节点
+                ul.insertBefore(li, ul.children[0]);
+                
+                // 删除节点 node.removeChild(child)
+                var lia = li.querySelectorAll('a');
+                for(var i = 0; i < lia.length; i++) {
+                    lia[i].onclick = function() {
+                        // 删除当前a标签的父节点li
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

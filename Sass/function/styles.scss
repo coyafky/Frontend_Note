@@ -1,0 +1,35 @@
+// 定义一个自定义函数来计算宽度
+@function calculate-width($base, $multiplier) {
+    @return $base * $multiplier;
+  }
+  
+  // 定义一个混合指令来应用侧边栏样式
+  @mixin sidebar-style($base-width, $multiplier) {
+    width: calculate-width($base-width, $multiplier);
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  // 使用自定义函数和混合指令来样式化侧边栏
+  #sidebar {
+    @include sidebar-style(5px, 2);
+  }
+  
+  // 定义一个自定义函数来计算字体大小
+  @function calculate-font-size($base-size, $factor) {
+    @return $base-size * $factor;
+  }
+  
+  // 使用自定义函数来样式化盒子
+  .box {
+    font-size: calculate-font-size(16px, 1.5);
+    background-color: #e0e0e0;
+    padding: 20px;
+  }
+  
+  // 容器样式
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }

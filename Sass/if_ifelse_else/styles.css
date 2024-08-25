@@ -1,0 +1,22 @@
+.text-light {
+  color: #fefefe;
+  background-color: #000;
+}
+
+.text-dark {
+  color: #333;
+  background-color: #fff;
+}
+
+.text-custom {
+  color: #8a2be2;
+  background-color: #000;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */

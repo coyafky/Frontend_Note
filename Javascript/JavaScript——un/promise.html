@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise Visualization</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Promise Visualization</h1>
+  <button id="triggerButton">Trigger Promise</button>
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('triggerButton').addEventListener('click', function() {
+      var promise = new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          var randomNum = Math.random();
+          if (randomNum > 0.5) {
+            resolve('Operation succeeded');
+          } else {
+            reject('Operation failed');
+          }
+        }, 1000);
+      });
+
+      promise
+        .then(function(result) {
+          document.getElementById('result').textContent = 'Success: ' + result;
+        })
+        .catch(function(error) {
+          document.getElementById('result').textContent = 'Error: ' + error;
+        })
+        .finally(function() {
+          document.getElementById('result').textContent += ' (Promise settled)';
+        });
+    });
+  </script>
+</body>
+</html>

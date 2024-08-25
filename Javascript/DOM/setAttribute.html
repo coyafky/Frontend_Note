@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setAttribute Example</title>
+</head>
+<body>
+    <div id="myElement" class="oldClass">Hello, World!<
+
+    <script>
+        // 获取要设置属性的元素
+        var element = document.getElementById("myElement");
+
+        // 使用 setAttribute() 方法设置属性
+        element.setAttribute("class", "newClass");
+        var classValue = element.getAttribute("class");
+        console.log(classValue); // 输出获取到的属性值
+    </script>
+</body>
+</html>

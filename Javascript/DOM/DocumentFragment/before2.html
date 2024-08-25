@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript DOM - before()</title>
+        <style>
+            button {
+                padding: 0.75em 1em;
+                background-color: #F7DF1E;
+                color: #000;
+                cursor: pointer;
+                border-radius: 50vw;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button>Donate Here</button>
+        <script>
+            const button = document.querySelector('button');
+            button.firstChild.before('🧡 ');
+
+        </script>
+    </body>
+
+</html>

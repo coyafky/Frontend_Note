@@ -1,0 +1,10 @@
+$breakpoint-small: 600px;
+
+body {
+  background-color: white;
+  color: black;
+
+  @media (max-width: $breakpoint-small) {
+    background-color: lightblue;
+  }
+}

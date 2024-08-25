@@ -1,0 +1,76 @@
+// 定义断点
+$breakpoint-small: 600px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1200px;
+
+// 基础样式
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+// 媒体查询
+@media (max-width: $breakpoint-small) {
+  body {
+    background-color: lightblue;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium) {
+  body {
+    background-color: lightgreen;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: $breakpoint-medium + 1) and (max-width: $breakpoint-large) {
+  body {
+    background-color: lightyellow;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: $breakpoint-large + 1) {
+  body {
+    background-color: lightcoral;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XMLHttpRequest老版本</title>
+</head>
+<body>
+  <script>
+    // 新建一个 XMLHttpRequest 对象
+    const xhr = new XMLHttpRequest();
+    
+    // 进行请求
+    xhr.open("GET", "https://www.fastmock.site/mock/d867c364f89208a7672e9e9d0a822417/qixiao/getFileDetail", true);
+    xhr.send({ name: "shuliqi", age: 18 });
+
+    // 等待服务器的响应
+    xhr.onreadystatechange = function () {
+      // 该函数会被调用四次， 因此需要判断状态是否是4
+      if (xhr.readyState === 4 ) {
+        if ( xhr.status === 200 ) {
+          console.log("请求数据成功：", JSON.parse(xhr.responseText) )
+        } else {
+          console.log("请求数据失败：", xhr.statusText );
+        }
+      }
+    }
+  </script>
+</body>
+</html>

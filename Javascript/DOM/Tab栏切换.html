@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after,
+        .clearfix::before {
+            content: '';
+            display: table;
+        }
+        .clearfix::after {
+            clear: both;
+        }
+
+        li {
+            float: left;
+            list-style: none;
+            padding: 10px 20px;
+            border-top: 1px solid #999;
+            border-bottom: 2px solid red;
+            cursor: pointer;
+        }
+
+        .nav {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .current {
+            background-color: red;
+            color: #fff;
+        }
+
+        .item {
+            /* 先将所有内容隐藏，单独显示的通过display: block显示 */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul class="clearfix">
+            <li class="current">商品介绍</li>
+            <li>规格包装</li>
+            <li>售后保障</li>
+            <li>商品评价</li>
+        </ul>
+        <div class="item" style="display: block;">内容1</div>
+        <div class="item">内容2</div>
+        <div class="item">内容3</div>
+        <div class="item">内容4</div>
+
+        <script>
+            var tab_list = document.querySelector('ul');
+            var lis = tab_list.querySelectorAll('li');
+            var items = document.querySelectorAll('.item');
+            for(var i = 0; i < lis.length; i++) {
+                // 为每个li设置索引号
+                lis[i].setAttribute('index', i);
+
+                lis[i].onclick = function() {
+                    // 1. tab栏点击红色，不点击无效果
+                    // 干掉所有人
+                    for(var i = 0; i < lis.length; i++) {
+                        lis[i].className = '';
+                    }
+                    // 留下我自己
+                    this.className = 'current';
+
+                    // 2. 内容与tab栏标签对应
+                    // 获取被点击的li的index索引号
+                    var index = this.getAttribute('index');
+                    // 排他思想
+                    for(var i = 0; i < items.length; i++) {
+                        items[i].style.display = 'none';
+                    }
+                    items[index].style.display = 'block';
+                }
+            }
+
+            // 总结：使用排他思想实现效果，使用自定义属性将内容和tab栏标签关联
+        </script>
+    </div>
+</body>
+</html>

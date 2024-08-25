@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">唐伯虎</button>
+    <div>123</div>
+
+    <script>
+        // 事件三要素分别是 事件源、事件类型、事件处理程序
+        // 事件源：事件触发的对象   按钮
+        // 事件类型：事件触发的条件 点击
+        // 事件处理程序：函数赋值   
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            alert('点秋香');
+        }
+
+        // 执行事件的过程
+        // 1.获取元素
+        var num = document.querySelector('div');
+        // 2.注册事件
+        // num.onclick
+        // 3.添加事件处理程序
+        num.onclick = function() {
+            console.log('我被选中了');
+        }
+    </script>
+</body>
+</html>

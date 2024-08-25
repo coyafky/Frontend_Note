@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // JS原本是单线程的，H5允许JS创建多个线程，于是产生了同步和异步
+        console.log(1);
+        // 由于这个线程花费时间比较长，所以其他任务会先执行完，输出结果是1 2 3
+        setTimeout(function(){
+            console.log(3);
+        }, 1000)
+        console.log(2);
+
+        // 1. 同步任务在主线程上执行，形成一个执行栈
+        // 2. 异步任务一般通过回调函数实现，放到任务队列里
+        // (1)普通事件，click,resize等
+        // (2)资源加载，load,error等
+        // (3)定时器，setTimeout,setInterval
+        // 3. 同步任务执行完后，读取异步任务到执行栈中
+        console.log(1);
+        setTimeout(function(){
+            console.log(3);
+        }, 0)
+        console.log(2);
+    </script>
+</body>
+</html>

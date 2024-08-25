@@ -1,0 +1,55 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            float: left;
+            margin-right: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hour">1</div>
+    <div class="min">2</div>
+    <div class="sec">3</div>
+
+    <script>
+        // 1. 获取元素
+        var hour = document.querySelector('.hour');
+        var min = document.querySelector('.min');
+        var sec = document.querySelector('.sec');
+        // 2. 获取截止时间
+        var inputTime = +new Date('2022-8-29 17:30:00');
+
+        // 在定时器之前执行一次countDown，防止第一次刷新页面没有显示时间
+        countDown()
+        // 3. 开启定时器
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            min.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            sec.innerHTML = s;
+        }
+    </script>
+</body>
+</html>

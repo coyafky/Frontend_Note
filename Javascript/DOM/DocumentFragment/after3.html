@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>after() Example</title>
+</head>
+<body>
+  <div class="myClass">First Element</div>
+  <div class="myClass">Second Element</div>
+
+  <script>
+    const elements = document.querySelectorAll('.myClass');
+    const newElement = document.createElement('div');
+    newElement.textContent = 'New element after each.';
+
+    elements.forEach(element => {
+      element.after(newElement.cloneNode(true));
+    });
+  </script>
+</body>
+</html>

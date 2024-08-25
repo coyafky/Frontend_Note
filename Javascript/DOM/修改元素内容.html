@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock {
+            width: 300px;
+            height: 50px;
+            background-color: pink;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button>获取当前时间</button>
+    <div id="clock">时钟</div>
+    <p id="clock"><strong>时钟2</strong></p>
+    <span>
+        <strong>时钟2</strong>
+        <i>hh</i>
+    </span>
+    
+    <script>
+        // innerText修改元素内容
+        var clock = document.querySelector('#clock');
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            clock.innerText = getDate();
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var arr = ['日','一','二','三','四','五','六'];
+            var day = arr[date.getDay()];
+            var h = date.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return '现在是' + year + '年' + month + '月' + dates + '日 星期' + day + ' ' + h + ':' + m + ':' + s;
+        }
+
+        // 元素也可以不绑定事件
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+
+        // innerText不识别html标签，省略空格和换行
+        // innerHTML识别标签，保留空格和换行
+        var span = document.querySelector('span');
+        console.log(span.innerText);
+        console.log(span.innerHTML);
+    </script>
+</body>
+</html>
