@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Key Example</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in items" :key="item.id">{{ item.name }}</li>
+        </ul>
+        <button @click="shuffleItems">Shuffle Items</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        const app = createApp({
+            data() {
+                return {
+                    items: [
+                        { id: 1, name: 'Item 1' },
+                        { id: 2, name: 'Item 2' },
+                        { id: 3, name: 'Item 3' }
+                    ]
+                }
+            },
+            methods: {
+                shuffleItems() {
+                    this.items = this.items.sort(() => Math.random() - 0.5);
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>

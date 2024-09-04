@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Multiple Apps Example</title>
+</head>
+<body>
+    <div id="app1">
+        <button @click="count1++">{{ count1 }}</button>
+    </div>
+    <div id="app2">
+        <button @click="count2++">{{ count2 }}</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        const app1 = createApp({
+            data() {
+                return {
+                    count1: 0
+                }
+            }
+        });
+
+        app1.config.errorHandler = (err) => {
+            console.error('App1 Error:', err);
+        };
+
+        app1.mount('#app1');
+
+        const app2 = createApp({
+            data() {
+                return {
+                    count2: 0
+                }
+            }
+        });
+
+        app2.config.errorHandler = (err) => {
+            console.error('App2 Error:', err);
+        };
+
+        app2.mount('#app2');
+    </script>
+</body>
+</html>

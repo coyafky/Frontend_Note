@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 导入Vue3的CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Vue应用需要挂载的DOM元素 -->
+    <div id="app"> {{message}}</div>
+
+    <script>
+        // const { createApp } = Vue：从Vue库中解构出createApp函数。
+        const { createApp } = Vue
+        // 每个 Vue 应用都是通过 createApp 函数创建一个新的 应用实例：
+        // createApp({...})：创建一个Vue应用实例，传入一个对象作为配置
+        createApp({
+
+            // setup(){...}：使用setup函数来定义组件的逻辑。
+
+            setup(){
+                const  message ="hello coya";
+                // return {message}：返回一个对象，包含需要暴露给模板的数据和方法。
+                return {message}
+            }
+            // .mount('#app')：将Vue应用实例挂载到id为app的DOM元素上。
+        }).mount('#app')
+    </script>
+   
+</body>
+</html>
